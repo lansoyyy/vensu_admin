@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" color="#1769E0" role="img" aria-labelledby="christening-title">
+  <title id="christening-title">Christening dove</title>
+  <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M25 35C19 29 16 20 18 9C23 17 30 20 35 24C38 26 40 29 41 32L43 24C44 20 47 18 50 19C53 20 54 23 53 26L59 29L52 32C48 44 39 49 26 47L10 52L15 41L7 32C14 32 20 33 25 35Z"/>
+    <path d="M25 35C29 38 34 38 38 36"/>
+    <circle cx="49" cy="24" r="1.2" fill="currentColor" stroke="none"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" color="#6B4BBB" role="img" aria-labelledby="conference-title">
+  <title id="conference-title">Conference</title>
+  <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="24" y="8" width="16" height="31" rx="8"/><path d="M16 30v3a16 16 0 0 0 32 0v-3M32 49v10M24 59h16"/>
+  </g>
+</svg>

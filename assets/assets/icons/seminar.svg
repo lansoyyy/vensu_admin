@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" color="#008E78" role="img" aria-labelledby="seminar-title">
+  <title id="seminar-title">Seminar</title>
+  <g stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 13h46M12 13v30h40V13M32 7v6M32 43v15M32 47 20 57M32 47l12 10"/>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <!-- <base href="/"> -->
+  <base href="https://lansoyyy.github.io/vensu_admin/">
+
+  <meta charset="UTF-8">
+  <!-- Flutter replaces this tag with its own once the engine starts; it is
+       here so the splash is laid out at phone scale from the first paint. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Vensu — discover and book event venues across Cebu for weddings, birthdays, corporate events and more.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Vensu">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <meta name="theme-color" content="#0066CC">
+  <title>Vensu</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Splash shown while the Flutter engine and app bundle download.
+       Removed as soon as Flutter paints its first frame. -->
+  <style>
+    #splash {
+      position: fixed; inset: 0; z-index: 9999;
+      display: flex; align-items: center; justify-content: center;
+      background: #f7f7f7;
+      transition: opacity 240ms ease-out;
+    }
+    #splash.hide { opacity: 0; pointer-events: none; }
+    #splash .stack { display: flex; flex-direction: column; align-items: center; }
+    /* "Lift and settle": the logo rises and grows while the grounded
+       shadow narrows and fades, then both settle back. 1.6s loop. The
+       Flutter loading screen and the Android launch screen match it. */
+    #splash img {
+      display: block; width: 104px; height: auto; transform-origin: center;
+      transform: translateY(0) scale(.94);
+      animation: splash-lift 1.6s cubic-bezier(.42,0,.58,1) infinite;
+    }
+    #splash .shadow {
+      margin-top: 22px; width: 64px; height: 5px; border-radius: 50%;
+      background: #0066cc; opacity: .18; filter: blur(2px);
+      animation: splash-shadow 1.6s cubic-bezier(.42,0,.58,1) infinite;
+    }
+    @keyframes splash-lift {
+      0%, 100% { transform: translateY(0) scale(.94); }
+      50%      { transform: translateY(-12px) scale(1.04); }
+    }
+    @keyframes splash-shadow {
+      0%, 100% { transform: scaleX(1); opacity: .18; }
+      50%      { transform: scaleX(.65); opacity: .085; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #splash img, #splash .shadow { animation: none; }
+      #splash img { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="splash" aria-label="Loading" role="status">
+    <div class="stack">
+      <img src="assets/assets/images/logo.svg" alt="Vensu">
+      <div class="shadow" aria-hidden="true"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      // The splash is the only loading animation the visitor sees: it
+      // stays up, still animating, until the app reports that its first
+      // page is on screen, then fades out onto it. It always plays at
+      // least one full 1.6s cycle. If the app never reports in, the
+      // first Flutter frame plus a grace period removes it anyway.
+      var splash = document.getElementById('splash');
+      var started = Date.now();
+      var cycle = 1600;
+      function hide() {
+        if (!splash) return;
+        var wait = Math.max(0, cycle - ((Date.now() - started) % cycle)) % cycle;
+        setTimeout(function () {
+          if (!splash) return;
+          splash.classList.add('hide');
+          setTimeout(function () { if (splash) { splash.remove(); splash = null; } }, 260);
+        }, wait);
+      }
+      window.addEventListener('vensu-ready', hide, { once: true });
+      window.addEventListener('flutter-first-frame', function () {
+        setTimeout(hide, 15000);
+      }, { once: true });
+    })();
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
